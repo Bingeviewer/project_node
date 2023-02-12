@@ -2,6 +2,7 @@ pipeline {
     agent any
     tools {
         jdk "jdk8"
+        Docker "docker"
     }
 
     stages {
