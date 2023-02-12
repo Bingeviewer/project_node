@@ -21,7 +21,9 @@ pipeline {
         }
         stage("sonarquality") {
             steps {
-                waitForQualityGate abortPipeline: false, credentialsId: 'jenkins'
+                script {
+                    waitForQualityGate abortPipeline: false, credentialsId: 'jenkins'
+                }
             }
         }
     }
