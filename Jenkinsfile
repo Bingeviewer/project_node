@@ -2,16 +2,16 @@ pipeline {
     agent any
     tools {
         jdk "jdk8"
-        Docker "docker"
+        maven "maven"
     }
 
     stages {
         stage("sonarquality check with maven") {
-            agent {
+            /* agent {
                 docker {
                     image "maven"
                 }
-            }
+            } */
             steps {
                 script {
                     withSonarQubeEnv(credentialsId: 'jenkins') {
