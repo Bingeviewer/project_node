@@ -19,6 +19,10 @@ pipeline {
                 }
             }
         }
-
+        stage("sonarquality") {
+            steps {
+                waitForQualityGate abortPipeline: false, credentialsId: 'jenkins'
+            }
+        }
     }
 }
