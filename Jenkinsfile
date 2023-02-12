@@ -6,11 +6,11 @@ pipeline {
 
     stages {
         stage("sonarquality check with maven") {
-            /* agent {
+            agent {
                 docker {
                     image "maven"
                 }
-            } */
+            }
             steps {
                 script {
                     withSonarQubeEnv(credentialsId: 'jenkins') {
